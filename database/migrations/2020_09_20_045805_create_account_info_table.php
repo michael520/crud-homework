@@ -15,6 +15,12 @@ class CreateAccountInfoTable extends Migration
     {
         Schema::create('account_info', function (Blueprint $table) {
             $table->id();
+            $table->string('username');
+            $table->string('name');
+            $table->string('gander');
+            $table->date('birthday');
+            $table->string('email');
+            $table->text('note');
             $table->timestamps();
         });
     }
