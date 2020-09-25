@@ -60,3 +60,7 @@
 ### 開啟瀏覽器，輸入網址
 
 http://localhost:8000
+
+### ScreenShot
+
+![](public/images/screenShot.png)
