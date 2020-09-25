@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccountInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/accountinfo', function () {
+    return redirect()->route('/');
 });
+
+Route::get('/', 'App\Http\Controllers\AccountInfoController@index');
+
+Route::resource('accountinfo', AccountInfoController::class);
+
+Route::get('excel/exportxlsx','App\Http\Controllers\ExcelController@exportxlsx');
+Route::get('excel/exportcsv','App\Http\Controllers\ExcelController@exportcsv');
+Route::post('excel/import','App\Http\Controllers\ExcelController@import');
